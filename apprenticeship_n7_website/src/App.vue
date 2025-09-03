@@ -1,18 +1,12 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-toolbar-title>Mon App Vue + Vuetify</v-toolbar-title>
-      <v-spacer />
-      <RouterLink to="/">Accueil</RouterLink>
-      <RouterLink to="/about">À propos</RouterLink>
-    </v-app-bar>
-
+    <TopBar />
     <v-main>
-      <RouterView />
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script setup lang="ts">
-// Pas besoin de code ici
+import TopBar from '@/components/TopBar.vue';
 </script>
