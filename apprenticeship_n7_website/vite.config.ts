@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vuetify from 'vite-plugin-vuetify'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import nightwatchPlugin from 'vite-plugin-nightwatch'
@@ -10,6 +11,7 @@ import nightwatchPlugin from 'vite-plugin-nightwatch'
 export default defineConfig({
   plugins: [
     vue(),
+    vuetify({ autoImport: true }), // 🚀 Vuetify activé
     vueJsx(),
     vueDevTools(),
     nightwatchPlugin(),

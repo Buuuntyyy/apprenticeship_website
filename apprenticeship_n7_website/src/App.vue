@@ -1,11 +1,18 @@
-<script setup lang="ts"></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title>Mon App Vue + Vuetify</v-toolbar-title>
+      <v-spacer />
+      <RouterLink to="/">Accueil</RouterLink>
+      <RouterLink to="/about">À propos</RouterLink>
+    </v-app-bar>
+
+    <v-main>
+      <RouterView />
+    </v-main>
+  </v-app>
 </template>
 
-<style scoped></style>
+<script setup lang="ts">
+// Pas besoin de code ici
+</script>
