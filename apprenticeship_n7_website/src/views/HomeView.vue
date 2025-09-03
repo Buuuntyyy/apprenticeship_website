@@ -2,11 +2,12 @@
   <v-container fluid class="fill-height pa-0 home-bg">
     <v-row align="center" justify="center" class="text-center">
       <v-col cols="12" md="8">
+        <AnimatedLogo :size="150" style="color: white; margin-bottom: 1rem;" />
         <h1 class="display-2 font-weight-bold mb-4 text-white">
-          Trouvez l'alternance idéale pour votre parcours
+          Trouvez votre voie en école d'ingénieur
         </h1>
         <p class="subtitle-1 mb-6 text-white">
-          Une plateforme pensée, développée et maintenue par des étudiants, pour les étudiants.
+          La plateforme pour vous guider dans le monde des études d'ingénierie et de l'alternance.
         </p>
         <v-btn color="secondary" large @click="$router.push('/alternance')">
           Découvrir les offres
@@ -17,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-// rien pour l’instant
+import AnimatedLogo from '@/components/AnimatedLogo.vue';
 </script>
 
 <style scoped>

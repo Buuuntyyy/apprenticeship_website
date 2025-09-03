@@ -18,8 +18,8 @@ const myCustomLightTheme = {
   dark: false,
   colors: {
     primary: '#1947ba',
-    secondary: '#1abc9c',
-    accent: '#1abc9c',
+    secondary: '#FF9800', // Orange
+    accent: '#FF9800',
     error: '#dc3545',
     info: '#17a2b8',
     success: '#28a745',
@@ -31,9 +31,9 @@ const myCustomLightTheme = {
 const myCustomDarkTheme = {
   dark: true,
   colors: {
-    primary: '#1947ba',
-    secondary: '#4dd3c9',
-    accent: '#4dd3c9',
+    primary: '#4a7cf3',
+    secondary: '#FFB74D', // Light Orange
+    accent: '#FFB74D',
     error: '#e57373',
     info: '#64b5f6',
     success: '#81c784',

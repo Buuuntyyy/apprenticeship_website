@@ -1,11 +1,39 @@
 <template>
-  <v-app-bar app color="primary" dark>
-    <v-toolbar-title>Alternance N7</v-toolbar-title>
+  <v-app-bar app color="primary">
+    <AnimatedLogo @click="$router.push('/')" class="ml-2" :size="36" />
+    <v-toolbar-title class="ml-2">CapSup'</v-toolbar-title>
+
+    <v-tabs centered color="secondary" slider-color="secondary">
+      <v-tab to="/">Accueil</v-tab>
+      <v-tab to="/post-bac">Post-Bac</v-tab>
+      
+      <v-menu open-on-hover offset-y>
+        <template v-slot:activator="{ props }">
+          <v-tab v-bind="props">
+            Bac +2
+          </v-tab>
+        </template>
+
+        <v-list>
+          <v-list-item to="/admission/post-prepa">
+            <v-list-item-title>Post-Prépa</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/admission/post-but">
+            <v-list-item-title>Post-BUT</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/admission/post-licence">
+            <v-list-item-title>Post-Licences</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
+      <v-tab to="/alternance">Alternance</v-tab>
+      <v-tab to="/about">À propos</v-tab>
+      <v-tab to="/ecoles">Les écoles</v-tab>
+    </v-tabs>
+
     <v-spacer></v-spacer>
-    <v-btn text @click="$router.push('/')">Accueil</v-btn>
-    <v-btn text @click="$router.push('/alternance')">Alternance</v-btn>
-    <v-btn text @click="$router.push('/about')">À propos</v-btn>
-    <v-btn text @click="$router.push('/n7')">L'N7</v-btn>
+
     <v-btn icon @click="toggleTheme">
       <v-icon>mdi-theme-light-dark</v-icon>
     </v-btn>
@@ -14,6 +42,7 @@
 
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
+import AnimatedLogo from './AnimatedLogo.vue';
 
 const theme = useTheme()
 
