@@ -11,6 +11,11 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/bac-plus-2',
+      name: 'BacPlus2',
+      component: () => import('@/views/BacPlus2View.vue')
+    },
+    {
       path: '/post-bac',
       name: 'PostBac',
       component: () => import('@/views/PostBacView.vue')
@@ -38,6 +43,11 @@ const router = createRouter({
     {
       path: '/alternance',
       name: 'Alternance',
+      component: () => import('@/views/AlternanceInfoView.vue')
+    },
+    {
+      path: '/alternance/offres',
+      name: 'AlternanceOffres',
       component: () => import('@/views/OffersView.vue')
     },
     {

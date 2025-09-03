@@ -9,7 +9,7 @@
       
       <v-menu open-on-hover offset-y>
         <template v-slot:activator="{ props }">
-          <v-tab v-bind="props">
+          <v-tab v-bind="props" to="/bac-plus-2">
             Bac +2
           </v-tab>
         </template>
