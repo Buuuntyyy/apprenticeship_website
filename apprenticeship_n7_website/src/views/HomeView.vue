@@ -3,10 +3,10 @@
     <v-row align="center" justify="center" class="text-center">
       <v-col cols="12" md="8">
         <h1 class="display-2 font-weight-bold mb-4 text-white">
-          Trouvez votre alternance à l'ENSEEIHT
+          Trouvez l'alternance idéale pour votre parcours
         </h1>
         <p class="subtitle-1 mb-6 text-white">
-          Plateforme moderne pour faciliter la recherche d'alternance en école d'ingénieur à l'N7.
+          Une plateforme pensée, développée et maintenue par des étudiants, pour les étudiants.
         </p>
         <v-btn color="secondary" large @click="$router.push('/alternance')">
           Découvrir les offres

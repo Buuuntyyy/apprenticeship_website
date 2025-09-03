@@ -1,0 +1,27 @@
+:root {
+  /* Bleu principal */
+  --color-primary: #1947ba;
+  --color-primary-light: #4a7cf3;
+  --color-primary-dark: #0f1d3d;
+
+  /* Accent / secondaire */
+  --color-accent: #1abc9c;
+  --color-accent-light: #4dd3c9;
+
+  /* Neutres */
+  --color-bg-light: #f4f6f8;
+  --color-bg-dark: #0f1d3d;
+  --color-text-primary: #1e1e1e;
+  --color-text-secondary: #555555;
+  --color-text-inverse: #ffffff;
+
+  /* Alertes / statuts */
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #1947ba 0%, #4a7cf3 100%);
+  --gradient-accent: linear-gradient(135deg, #1abc9c 0%, #4dd3c9 100%);
+}

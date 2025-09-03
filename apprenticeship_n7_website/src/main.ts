@@ -14,10 +14,46 @@ import * as directives from 'vuetify/directives'
 // Icônes (optionnel mais recommandé)
 import '@mdi/font/css/materialdesignicons.css'
 
+const myCustomLightTheme = {
+  dark: false,
+  colors: {
+    primary: '#1947ba',
+    secondary: '#1abc9c',
+    accent: '#1abc9c',
+    error: '#dc3545',
+    info: '#17a2b8',
+    success: '#28a745',
+    warning: '#ffc107',
+    background: '#f4f6f8',
+  }
+}
+
+const myCustomDarkTheme = {
+  dark: true,
+  colors: {
+    primary: '#1947ba',
+    secondary: '#4dd3c9',
+    accent: '#4dd3c9',
+    error: '#e57373',
+    info: '#64b5f6',
+    success: '#81c784',
+    warning: '#fff176',
+    background: '#0f1d3d',
+    surface: '#1f2b46'
+  }
+}
+
 // Config Vuetify
 const vuetify = createVuetify({
   components,
   directives,
+  theme: {
+    defaultTheme: 'myCustomLightTheme',
+    themes: {
+      myCustomLightTheme,
+      myCustomDarkTheme,
+    }
+  }
 })
 
 const app = createApp(App)
