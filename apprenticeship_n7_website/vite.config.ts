@@ -5,7 +5,6 @@ import vue from '@vitejs/plugin-vue'
 import vuetify from 'vite-plugin-vuetify'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
-import nightwatchPlugin from 'vite-plugin-nightwatch'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -14,7 +13,6 @@ export default defineConfig({
     vuetify({ autoImport: true }), // 🚀 Vuetify activé
     vueJsx(),
     vueDevTools(),
-    nightwatchPlugin(),
   ],
   resolve: {
     alias: {
