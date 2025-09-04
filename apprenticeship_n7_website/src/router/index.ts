@@ -21,6 +21,26 @@ const router = createRouter({
       component: () => import('@/views/PostBacView.vue')
     },
     {
+      path: '/prepa',
+      name: 'Prepa',
+      component: () => import('@/views/pathways/PrepaView.vue')
+    },
+    {
+      path: '/but',
+      name: 'But',
+      component: () => import('@/views/pathways/ButView.vue')
+    },
+    {
+      path: '/licence',
+      name: 'Licence',
+      component: () => import('@/views/pathways/LicenceView.vue')
+    },
+    {
+      path: '/bts',
+      name: 'Bts',
+      component: () => import('@/views/pathways/BtsView.vue')
+    },
+    {
       path: '/admission/post-prepa',
       name: 'PostPrepa',
       component: () => import('@/views/admission/PostPrepaView.vue')
