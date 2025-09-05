@@ -76,6 +76,11 @@ const router = createRouter({
       component: () => import('@/views/OfferDetailView.vue')
     },
     {
+      path: '/insertion-pro',
+      name: 'InsertionPro',
+      component: () => import('@/views/InsertionProView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       component: AboutView,
