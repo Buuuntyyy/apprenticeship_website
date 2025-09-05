@@ -4,6 +4,10 @@ import AboutView from '@/views/AboutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -19,6 +23,26 @@ const router = createRouter({
       path: '/post-bac',
       name: 'PostBac',
       component: () => import('@/views/PostBacView.vue')
+    },
+    {
+      path: '/prepa',
+      name: 'Prepa',
+      component: () => import('@/views/pathways/PrepaView.vue')
+    },
+    {
+      path: '/but',
+      name: 'But',
+      component: () => import('@/views/pathways/ButView.vue')
+    },
+    {
+      path: '/licence',
+      name: 'Licence',
+      component: () => import('@/views/pathways/LicenceView.vue')
+    },
+    {
+      path: '/bts',
+      name: 'Bts',
+      component: () => import('@/views/pathways/BtsView.vue')
     },
     {
       path: '/admission/post-prepa',
@@ -54,6 +78,11 @@ const router = createRouter({
       path: '/offer/:id',
       name: 'OfferDetails',
       component: () => import('@/views/OfferDetailView.vue')
+    },
+    {
+      path: '/insertion-pro',
+      name: 'InsertionPro',
+      component: () => import('@/views/InsertionProView.vue')
     },
     {
       path: '/about',
