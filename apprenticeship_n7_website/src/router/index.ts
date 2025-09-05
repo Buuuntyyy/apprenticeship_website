@@ -4,6 +4,10 @@ import AboutView from '@/views/AboutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -74,6 +78,11 @@ const router = createRouter({
       path: '/offer/:id',
       name: 'OfferDetails',
       component: () => import('@/views/OfferDetailView.vue')
+    },
+    {
+      path: '/insertion-pro',
+      name: 'InsertionPro',
+      component: () => import('@/views/InsertionProView.vue')
     },
     {
       path: '/about',

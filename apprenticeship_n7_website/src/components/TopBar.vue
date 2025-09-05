@@ -28,8 +28,9 @@
       </v-menu>
 
       <v-tab to="/alternance">Alternance</v-tab>
-      <v-tab to="/about">À propos</v-tab>
       <v-tab to="/ecoles">Les écoles</v-tab>
+      <v-tab to="/insertion-pro">Insertion Pro</v-tab>
+      <v-tab to="/about">À propos</v-tab>
     </v-tabs>
 
     <v-spacer></v-spacer>
