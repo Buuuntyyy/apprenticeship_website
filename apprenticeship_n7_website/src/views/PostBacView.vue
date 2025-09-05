@@ -25,7 +25,7 @@
             Bachelor Universitaire de Technologie (BUT)
           </v-card-title>
           <v-card-text>
-            Anciennement DUT, le BUT est une formation en 3 ans qui allie théorie et pratique, avec une forte dimension professionnelle. Les meilleurs étudiants peuvent intégrer une école d'ingénieur sur dossier après leur BUT.
+            Anciennement DUT, le BUT est une formation en 3 ans qui allie théorie et pratique, avec une forte dimension professionnelle. Les meilleurs étudiants peuvent intégrer une école d'ingénieur sur dossier après leur 2ème ou 3ème année de BUT.
           </v-card-text>
         </v-card>
 

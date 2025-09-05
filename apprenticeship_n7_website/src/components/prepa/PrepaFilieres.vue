@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, PropType } from 'vue';
+import { ref, type PropType } from 'vue';
 
 interface Filiere {
   name: string;

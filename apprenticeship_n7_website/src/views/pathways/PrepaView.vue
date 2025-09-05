@@ -4,12 +4,15 @@
       <v-col cols="12" md="10">
         <h1 class="text-h3 text-center mb-4">La Classe Préparatoire aux Grandes Écoles (CPGE)</h1>
         <p class="text-body-1 text-center mb-10">
-          Souvent appelée "voie royale", la prépa est un cursus intensif de deux ans qui prépare aux concours d'entrée des plus grandes écoles d'ingénieurs.
+          Souvent appelée "voie royale", la prépa est un cursus intensif de deux ans 
+          qui prépare aux concours d'entrée des plus grandes écoles d'ingénieurs.
+          <b>Toutes ces formations requièrent de solides bases en mathématiques</b> et une certaine rigueur
+           de travail.
         </p>
 
-        <PrepaExpectations :items="whatToExpect" />
         <PrepaFilieres :filieres="filieres" />
         <PrepaConcours :concours-list="concoursList" />
+        <PrepaExpectations :items="whatToExpect" />
         <PrepaTestimonials :testimonials="testimonials" />
         <PrepaFaq :faq="faq" />
 
@@ -28,7 +31,7 @@ import PrepaFaq from '@/components/prepa/PrepaFaq.vue';
 
 const whatToExpect = ref([
   { title: 'Le Rythme de Travail', icon: 'mdi-clock-fast', text: 'Attendez-vous à un volume horaire élevé (environ 30h de cours par semaine), complété par un travail personnel quasi équivalent. La régularité est la clé.' },
-  { title: 'Les Khôlles', icon: 'mdi-account-voice', text: 'Ce sont des interrogations orales hebdomadaires en petit groupe. Elles permettent de vérifier la compréhension du cours et d\'entraîner à l\'argumentation rapide.' },
+  { title: 'Les Khôlles', icon: 'mdi-account-voice', text: 'Ce sont des interrogations orales hebdomadaires en petit groupe (6-8 élèves, 2h par semaine). Elles permettent de vérifier la compréhension du cours et d\'entraîner à l\'argumentation rapide.' },
   { title: 'Les Devoirs Sur Table (DS)', icon: 'mdi-pencil-ruler', text: 'Chaque semaine, un devoir de 3 ou 4 heures dans une matière majeure évalue vos connaissances et votre capacité à résoudre des problèmes complexes en temps limité.' },
   { title: 'Le TIPE', icon: 'mdi-flask-beaker', text: 'En 2ème année, les Travaux d\'Initiative Personnelle Encadrés sont un projet de recherche scientifique sur un thème donné. Il est présenté aux concours.' },
 ]);
@@ -42,9 +45,10 @@ const filieres = ref([
     details: [
       'Accent mis sur l\'abstraction et le raisonnement formel.',
       'Idéal pour ceux qui visent les concours les plus prestigieux (X, ENS).',
+      'Grandement centré sur les mathématiques',
       'Débouche en 2ème année sur les filières MP (dominante maths) ou PSI (dominante physique).'
     ],
-    profile: 'Passionné d\'abstraction',
+    profile: 'Forte appétence en mathématiques et concepts abstraits',
     subjects: 'Maths, Physique',
     outcomes: 'MP ou PSI'
   },
@@ -54,11 +58,11 @@ const filieres = ref([
     shortDesc: 'Physique, Chimie, SI. Pour les amateurs de sciences expérimentales.',
     showDetails: false,
     details: [
-      'Équilibre entre théorie (physique) et pratique (chimie).',
-      'Forte composante en travaux pratiques et manipulations.',
+      'Beaucoup centrés sur les concepts théoriques et quelques notions plus pratiques.',
+      'Forte composante en abstractions des concepts physiques',
       'Débouche en 2ème année sur les filières PC (dominante chimie) ou PSI (dominante physique).'
     ],
-    profile: 'Aime l\'expérimentation',
+    profile: 'Forte appétence pour les sciences expérimentales',
     subjects: 'Physique, Chimie',
     outcomes: 'PC ou PSI'
   },
@@ -115,6 +119,8 @@ const concoursList = ref([
   { name: 'Concours Commun INP (CCINP)', url: 'https://www.concours-commun-inp.fr/', description: 'Le plus grand concours en nombre de places, donnant accès à plus de 60 écoles d\'ingénieurs publiques.', schools: [
     { name: 'ENSEEIHT', url: 'https://www.enseeiht.fr/' },
     { name: 'Grenoble INP - Phelma', url: 'https://phelma.grenoble-inp.fr/' },
+    { name: 'ENSEIRB-MATMECA', url: 'https://enseirb-matmeca.bordeaux-inp.fr/fr' },
+    { name: 'ENSIMAG', url: 'https://ensimag.grenoble-inp.fr/' },
     { name: 'ENSEA', url: 'https://www.ensea.fr/' },
     { name: '...et bien d\'autres', url: 'https://www.concours-commun-inp.fr//fr/les-ecoles.html' }
   ]},
@@ -127,23 +133,6 @@ const concoursList = ref([
     { name: 'AgroParisTech', url: 'https://www.agroparistech.fr/' },
     { name: 'Oniris', url: 'https://www.oniris-nantes.fr/' },
     { name: 'VetAgro Sup', url: 'https://www.vetagro-sup.fr/' }
-  ]},
-  { name: 'Concours Avenir Prépas', url: 'https://www.concoursavenir.fr/avenir-prepas/', description: 'Porte d\'entrée pour un groupe d\'écoles d\'ingénieurs privées reconnues.', schools: [
-    { name: 'ECE', url: 'https://www.ece.fr/' },
-    { name: 'EIGSI', url: 'https://www.eigsi.fr/' },
-    { name: 'EPF', url: 'https://www.epf.fr/' },
-    { name: 'ESILV', url: 'https://www.esilv.fr/' }
-  ]},
-  { name: 'Concours Puissance Alpha CPGE', url: 'https://www.puissance-alpha.fr/les-concours/cpge/', description: 'Un autre concours pour des écoles privées spécialisées dans divers domaines technologiques.', schools: [
-    { name: 'CPE Lyon', url: 'https://www.cpe.fr/' },
-    { name: 'ESEO', url: 'https://eseo.fr/' },
-    { name: 'HEI', url: 'https://www.hei.fr/' },
-    { name: 'ISEN', url: 'https://www.isen.fr/' }
-  ]},
-  { name: 'Concours G2E', url: 'https://concoursg2e.com/', description: 'Spécifique à la filière BCPST, orienté vers la géologie, l\'eau et l\'environnement.', schools: [
-    { name: 'ENTPE', url: 'https://www.entpe.fr/' },
-    { name: 'ENGEES', url: 'https://engees.unistra.fr/' },
-    { name: 'ENSG', url: 'https://www.ensg.eu/' }
   ]},
 ]);
 
