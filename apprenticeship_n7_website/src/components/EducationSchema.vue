@@ -6,7 +6,9 @@
       class="schema-image"
     />
     <p class="text-caption text-center mt-2">
-      Note: Des admissions sont aussi possibles sur dossier après un BUT 2.
+      Note: Les admissions après BUT2 ou BUT3 se font principalement sur dossier. <br> 
+      Quelques épreuves peuvent avoir lieux selon les écoles (test de mathématiques, d'anglais et un oral) <br>
+      Pas toutes les écoles sont atteignables par cette voie (X, ENS, Centrale...)
     </p>
   </v-container>
 </template>

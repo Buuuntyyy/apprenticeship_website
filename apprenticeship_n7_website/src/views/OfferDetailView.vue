@@ -1,33 +1,28 @@
 <template>
-  <v-container>
+  <v-container class="my-8">
     <v-row justify="center">
-      <v-col cols="12" md="8">
-        <v-card v-if="offer">
-          <v-card-title class="headline">{{ offer.title }}</v-card-title>
-          <v-card-subtitle>{{ offer.company }} - {{ offer.location }}</v-card-subtitle>
+      <v-col cols="12" md="11" lg="10">
+        <v-sheet rounded="lg" class="pa-6 pa-md-8" elevation="2" v-if="offer">
+          <v-btn variant="text" to="/alternance/offres" class="mb-4">
+            <v-icon start>mdi-arrow-left</v-icon>
+            Retour aux offres
+          </v-btn>
+          <h1 class="text-h4">{{ offer.title }}</h1>
+          <div class="d-flex align-center my-2">
+            <v-chip color="primary" class="mr-2">{{ offer.contractType }}</v-chip>
+            <v-icon start>mdi-map-marker-outline</v-icon>
+            <span>{{ offer.location }}</span>
+          </div>
           <v-divider class="my-4"></v-divider>
-          <v-card-text>
-            <p>{{ offer.description }}</p>
-            <p><strong>Missions :</strong></p>
-            <ul>
-              <li>Développement de nouvelles fonctionnalités</li>
-              <li>Maintenance et amélioration de l'existant</li>
-              <li>Participation aux phases de test et de recette</li>
-            </ul>
-            <p class="mt-4"><strong>Profil recherché :</strong></p>
-            <ul>
-              <li>Étudiant en école d'ingénieur (Bac+4/5)</li>
-              <li>Connaissances en JavaScript, Vue.js, et Node.js</li>
-              <li>Autonome, proactif et bon communicant</li>
-            </ul>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="primary" large>Postuler</v-btn>
-          </v-card-actions>
-        </v-card>
-        <v-alert v-else type="error">
-          L'offre demandée n'a pas été trouvée.
+          <h2 class="text-h6">Description de l'entreprise</h2>
+          <p class="body-2">{{ offer.companyDescription }}</p>
+          <h2 class="text-h6 mt-4">Missions</h2>
+          <p class="body-2">{{ offer.missions }}</p>
+          <h2 class="text-h6 mt-4">Profil recherché</h2>
+          <p class="body-2">{{ offer.profile }}</p>
+        </v-sheet>
+        <v-alert v-else type="warning" class="mt-4">
+          L'offre que vous recherchez n'a pas été trouvée.
         </v-alert>
       </v-col>
     </v-row>
@@ -43,7 +38,11 @@ interface Offer {
   title: string;
   company: string;
   location: string;
-  description: string;
+  contractType: string;
+  companyDescription: string;
+  missions: string;
+  profile: string;
+  field: string;
 }
 
 const route = useRoute();
@@ -51,12 +50,12 @@ const offer = ref<Offer | null>(null);
 
 // Mock data, in a real app this would be an API call
 const allOffers: Offer[] = [
-  { id: 1, title: 'Développeur Web Full-Stack', company: 'SuperCorp', location: 'Toulouse', description: 'Rejoignez notre équipe pour développer des applications web innovantes avec les dernières technologies.' },
-  { id: 2, title: 'Ingénieur Logiciel Embarqué', company: 'RoboTech', location: 'Blagnac', description: 'Participez à la conception et au développement de logiciels pour nos systèmes robotiques autonomes.' },
-  { id: 3, 'title': 'Data Scientist', company: 'DataAnalytics', location: 'Labège', description: 'Analysez des ensembles de données complexes pour en extraire des informations précieuses et aider à la prise de décision.' },
-  { id: 4, title: 'Ingénieur Cybersécurité', company: 'SecureNet', location: 'Toulouse', description: 'Protégez nos infrastructures et données contre les menaces et les cyberattaques.' },
-  { id: 5, title: 'Chef de Projet IT', company: 'Innovatech', location: 'Ramonville', description: 'Gérez des projets informatiques de A à Z, de la conception au déploiement.' },
-  { id: 6, title: 'Développeur Mobile (iOS/Android)', company: 'AppFactory', location: 'Toulouse', description: 'Créez des applications mobiles performantes et intuitives pour nos clients.' },
+  { id: 1, title: 'Développeur Web Full-Stack', company: 'SuperCorp', location: 'Toulouse', contractType: 'Apprentissage', companyDescription: 'SuperCorp est un leader de la transformation digitale.', missions: 'Développement front-end et back-end sur des projets clients.', profile: 'Bac+2/3 en informatique, passionné par le web.', field: 'Informatique' },
+  { id: 2, title: 'Ingénieur Logiciel Embarqué', company: 'RoboTech', location: 'Blagnac', contractType: 'Apprentissage', companyDescription: 'RoboTech conçoit des robots pour l\'industrie aérospatiale.', missions: 'Programmation en C/C++ sur des systèmes temps réel.', profile: 'Bac+3 en systèmes embarqués ou équivalent.', field: 'Aéronautique' },
+  { id: 3, title: 'Data Scientist', company: 'DataAnalytics', location: 'Labège', contractType: 'Apprentissage', companyDescription: 'Nous aidons nos clients à valoriser leurs données.', missions: 'Création de modèles de machine learning, analyse de données.', profile: 'Master en statistiques ou informatique décisionnelle.', field: 'Informatique' },
+  { id: 4, title: 'Ingénieur Cybersécurité', company: 'SecureNet', location: 'Toulouse', contractType: 'Apprentissage', companyDescription: 'SecureNet est un pure-player de la cybersécurité.', missions: 'Tests d\'intrusion, analyse de vulnérabilités, veille.', profile: 'Bac+3/4 en réseaux ou sécurité informatique.', field: 'Informatique' },
+  { id: 5, title: 'Chef de Projet IT', company: 'Innovatech', location: 'Ramonville', contractType: 'Apprentissage', companyDescription: 'Innovatech est une ESN à taille humaine.', missions: 'Pilotage de projets, gestion des plannings et des budgets.', profile: 'Master en gestion de projet, bon relationnel.', field: 'Généraliste' },
+  { id: 6, title: 'Développeur Mobile (iOS/Android)', company: 'AppFactory', location: 'Toulouse', contractType: 'Apprentissage', companyDescription: 'Nous créons des applications mobiles sur mesure.', missions: 'Développement natif sur iOS (Swift) et Android (Kotlin).', profile: 'Bac+3 minimum avec une première expérience en mobile.', field: 'Informatique' },
 ];
 
 onMounted(() => {
