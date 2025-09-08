@@ -10,7 +10,10 @@
 
           <ButOverview :overview-items="overviewItems" />
           <ButKeyFigures :figures="keyFigures" />
+          <ButStudentOrigins :origins="studentOrigins" />
           <ButAdmissionToEngineering :admission-steps="admissionSteps" />
+          <ButPostGraduation :post-graduation="postGraduationData" />
+          <ButApprentissage :apprentissage="apprentissageData" />
           <ButSpecializations :specializations="specializationsByDomain" />
           <ButFaq :faq="faq" />
         </v-sheet>
@@ -23,7 +26,10 @@
 import { ref } from 'vue';
 import ButOverview from '@/components/but/ButOverview.vue';
 import ButKeyFigures from '@/components/but/ButKeyFigures.vue';
+import ButStudentOrigins from '@/components/but/ButStudentOrigins.vue';
 import ButAdmissionToEngineering from '@/components/but/ButAdmissionToEngineering.vue';
+import ButPostGraduation from '@/components/but/ButPostGraduation.vue';
+import ButApprentissage from '@/components/but/ButApprentissage.vue';
 import ButSpecializations from '@/components/but/ButSpecializations.vue';
 import ButFaq from '@/components/but/ButFaq.vue';
 
@@ -38,6 +44,49 @@ const keyFigures = ref([
   { title: 'Insertion Pro', value: '90%', caption: 'des diplômés qui cherchent un emploi le trouvent en moins de 6 mois.', color: 'success' },
   { title: 'Taux de réussite', value: '~70%', caption: 'en 3 ans pour les bacheliers technologiques, la voie privilégiée.', color: 'info' },
 ]);
+
+const studentOrigins = ref({
+  source: {
+    name: "MESR - SIES Note d'Information n°10 - Juin 2024",
+    url: "https://www.enseignementsup-recherche.gouv.fr/sites/default/files/2025-06/nf-sies-2025-10-36981.pdf"
+  },
+  data: [
+    { type: 'Bacheliers Technologiques', value: 42.87, color: 'primary' },
+    { type: 'Bacheliers Généraux', value: 52.7, color: 'success' },
+    { type: 'Bacheliers Professionnels', value: 1.6, color: 'info' },
+    { type: 'Autres', value: 2.9, color: 'grey' }
+  ]
+});
+
+const postGraduationData = ref({
+  source: {
+    name: "MESR - SIES Note d'Information n°10 - Juin 2024",
+    url: "https://www.enseignementsup-recherche.gouv.fr/sites/default/files/2025-06/nf-sies-2025-10-36981.pdf"
+  },
+  global: [
+    { label: 'Poursuite d\'études', value: 54, color: 'primary' },
+    { label: 'En emploi', value: 38, color: 'success' },
+    { label: 'Autres situations', value: 8, color: 'grey' }
+  ],
+  studies: [
+    { label: 'École d\'ingénieurs', value: 39, color: 'purple' },
+    { label: 'Master', value: 31, color: 'blue' },
+    { label: 'Autres formations', value: 30, color: 'teal' }
+  ]
+});
+
+const apprentissageData = ref({
+  iutRate: 23,
+  iutSource: {
+    name: "MESR - SIES Note n°10 - Juin 2024",
+    url: "https://www.enseignementsup-recherche.gouv.fr/sites/default/files/2025-06/nf-sies-2025-10-36981.pdf"
+  },
+  engineerRate: 19,
+  engineerSource: {
+    name: "MESR - SIES Note n°09 - Juin 2023",
+    url: "https://www.enseignementsup-recherche.gouv.fr/sites/default/files/2023-06/nf-sies-2023-09-28154.pdf"
+  }
+});
 
 const admissionSteps = ref([
   { title: 'Excellence du Dossier', icon: 'mdi-school-outline', text: 'Les notes obtenues durant les 3 années de BUT sont le critère principal. Un bon classement dans sa promotion est essentiel.' },
