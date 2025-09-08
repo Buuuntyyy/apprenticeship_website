@@ -1,6 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
+import PostBacView from '@/views/PostBacView.vue'
+import PrepaView from '@/views/pathways/PrepaView.vue'
+import ButView from '@/views/pathways/ButView.vue'
+import LicenceView from '@/views/pathways/LicenceView.vue'
+import BtsView from '@/views/pathways/BtsView.vue'
+import LegalMentionsView from '@/views/LegalMentionsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,7 +32,7 @@ const router = createRouter({
     },
     {
       path: '/prepa',
-      name: 'Prepa',
+      name: 'prepa',
       component: () => import('@/views/pathways/PrepaView.vue')
     },
     {
@@ -83,6 +89,11 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView,
+    },
+    {
+      path: '/mentions-legales',
+      name: 'legal',
+      component: LegalMentionsView,
     },
   ],
 })
