@@ -15,6 +15,15 @@
           <ButPostGraduation :post-graduation="postGraduationData" />
           <ButApprentissage :apprentissage="apprentissageData" />
           <ButSpecializations :specializations="specializationsByDomain" />
+
+          <v-divider class="my-12"></v-divider>
+
+          <CallToAction 
+            title="Prêt à trouver votre formation ?"
+            button-text="Explorer la carte Parcoursup"
+            button-url="https://dossier.parcoursup.fr/Candidat/carte"
+          />
+          
           <ButFaq :faq="faq" />
         </v-sheet>
       </v-col>
@@ -31,6 +40,7 @@ import ButAdmissionToEngineering from '@/components/but/ButAdmissionToEngineerin
 import ButPostGraduation from '@/components/but/ButPostGraduation.vue';
 import ButApprentissage from '@/components/but/ButApprentissage.vue';
 import ButSpecializations from '@/components/but/ButSpecializations.vue';
+import CallToAction from '@/components/shared/CallToAction.vue';
 import ButFaq from '@/components/but/ButFaq.vue';
 
 const overviewItems = ref([
